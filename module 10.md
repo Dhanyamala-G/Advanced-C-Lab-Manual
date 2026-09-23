@@ -1,4 +1,4 @@
-EXP NO:16 C PROGRAM TO SEARCH A GIVEN ELEMENT IN THE GIVEN LINKED LIST.
+# EXP NO:16 C PROGRAM TO SEARCH A GIVEN ELEMENT IN THE GIVEN LINKED LIST.
 Aim:
 To write a C program to search a given element in the given linked list.
 
@@ -10,11 +10,35 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+struct Node{
+    char data; 
+    struct Node *next;
+}*head;
 
+void search(char data)
+{
+ struct Node *current = head;
+ int location=1,flag=0;
+ while(current!=NULL){
+  if(current->data==data){
+      printf("item %c found at location %d",data,location);
+      flag=1;
+      return;
+  }   
+  current=current->next;
+  location++;
+ }
+ 
+ if(flag==0)
+ printf("Item not found");
+ 
+ 
+}
+```
 Output:
 
-//paste your output here
+<img width="590" height="367" alt="image" src="https://github.com/user-attachments/assets/ed03fb20-8921-4d28-919d-29fd403d7a18" />
 
 
 
@@ -23,7 +47,7 @@ Thus, the program to search a given element in the given linked list is verified
 
 
  
-EXP NO:17  PROGRAM TO INSERT A NODE IN A LINKED LIST.
+# EXP NO:17  PROGRAM TO INSERT A NODE IN A LINKED LIST.
 Aim:
 To write a C program to insert a node in a linked list.
 Algorithm:
@@ -34,11 +58,37 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+struct Node{
+    char data; 
+    struct Node *next;
+}*head;
 
+
+void insert(char data)
+{
+    struct Node *newnode=(struct Node*)malloc(sizeof(struct Node));
+    newnode->data=data;
+    newnode->next=NULL;
+    
+    if(head==NULL)
+    head=newnode;
+    
+    else{
+        struct Node *temp=head;
+        while(temp->next!=NULL){
+            temp=temp->next;
+            
+        }
+        temp->next=newnode;
+        
+    }
+    
+}
+```
 Output:
 
-//paste your output here
+<img width="304" height="276" alt="image" src="https://github.com/user-attachments/assets/d1922b93-5634-47ef-a707-5a5e008e6ea0" />
 
  
 Result:
@@ -46,7 +96,7 @@ Thus, the program to insert a node in a linked list is verified successfully.
 
 
  
-EXP NO:18 C PROGRAM TO TRAVERSE A DOUBLY LINKED LIST
+# EXP NO:18 C PROGRAM TO TRAVERSE A DOUBLY LINKED LIST
 Aim:
 To write a C program to traverse a doubly linked list.
 
@@ -58,11 +108,34 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+struct Node
+{
+    struct Node *prev;
+    struct Node *next;
+    char data;
+}*head;
 
+void display()
+{
+    struct Node *temp=head;
+    if(temp==NULL)
+    return;
+    
+    else{
+        while(temp!=NULL){
+            printf("%c ",temp->data);
+            temp=temp->next;
+        }
+    }
+    
+    
+    
+}
+```
 Output:
 
-//paste your output here
+<img width="293" height="347" alt="image" src="https://github.com/user-attachments/assets/7251f0b7-d081-49ba-91d1-1a42cce40160" />
 
 
 Result:
@@ -70,7 +143,7 @@ Thus, the program to traverse a doubly linked list is verified successfully.
 
 
 
-EXP NO:19 C PROGRAM TO INSERT AN ELEMENT IN DOUBLY LINKED LIST
+# EXP NO:19 C PROGRAM TO INSERT AN ELEMENT IN DOUBLY LINKED LIST
 Aim:
 To write a C program to insert an element in doubly linked list
 
@@ -83,11 +156,40 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+struct Node
+{
+    struct Node *prev;
+    struct Node *next;
+    char data;
+}*head;
 
+void insert(char data)
+{
+    
+   struct Node *newnode= (struct Node*)malloc(sizeof(struct Node));
+   newnode->data=data;
+   newnode->next=NULL;
+   
+   if(head==NULL){
+       head=newnode;
+       newnode->prev=NULL;
+   }
+   else{
+       struct Node *temp=head;
+       while(temp->next!=NULL){
+            temp=temp->next;
+       }
+            
+            temp->next=newnode;
+            newnode->prev=temp;
+   }
+    
+}
+```
 Output:
 
-//paste your output here
+<img width="317" height="345" alt="image" src="https://github.com/user-attachments/assets/deb05605-9b1b-4bcb-a312-101e6795c3b6" />
 
 
 Result:
@@ -96,7 +198,7 @@ Thus, the program to insert an element in doubly linked list is verified success
 
 
 
-EXP NO:20 C FUNCTION TO DELETE A GIVEN ELEMENT IN THE GIVEN LINKED LIST
+# EXP NO:20 C FUNCTION TO DELETE A GIVEN ELEMENT IN THE GIVEN LINKED LIST
 
 
 
