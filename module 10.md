@@ -227,11 +227,27 @@ o	If the element is not found in any node, print a message indicating the elemen
 
 Program:
 
-//type your code here
-
+```
+struct Node{
+    char data; 
+    struct Node *next;
+}*head;
+void delete()
+{
+    if(head==NULL){
+    printf("List is empty");
+    return;}
+    
+    
+    struct Node *current=head;
+    head=head->next;
+    free(current);
+    printf("Node deleted from the begining ...\n");
+}
+```
 Output:
 
-//paste your output here
+<img width="706" height="502" alt="image" src="https://github.com/user-attachments/assets/e73f9414-1b84-49f3-952f-e9b4e67dcf1b" />
 
 
 
